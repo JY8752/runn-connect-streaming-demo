@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package jyapp.runndemo.pubsub.v1;
+
+message SubscribeRequest {}
+
+message SubscribeResponse { string message = 1; }
+
+service PubSubService {
+  rpc Subscribe(SubscribeRequest) returns (stream SubscribeResponse) {}
+}

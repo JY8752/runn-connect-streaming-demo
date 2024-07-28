@@ -1,0 +1,18 @@
+desc: pubsub 
+runners:
+  greq:
+    addr: localhost:8080
+    tls: false
+    bufDirs:
+      - ../../proto # ランブックの場所から相対パスで指定
+steps:
+  pubsub:
+    greq:
+      jyapp.runndemo.pubsub.v1.PubSubService/Subscribe:
+        message: {}
+        timeout: 3sec # ブロックするのでタイムアウトを設定したほうが良い
+    # ここでテストを書く
+    test: |
+      current.res.status == 4
+      && len(current.res.messages) == 1
+      && current.res.messages[0].message == 'Hi, from greet runbook!!'

@@ -1,0 +1,20 @@
+desc: hello
+runners:
+  greq: 
+    addr: localhost:8080
+    tls: false
+    bufDirs:
+      - ../../proto # ランブックの場所から相対パスで指定
+    # importPaths:
+    #   - ../proto/jyapp/runndemo/hello
+steps:
+  wait:
+    exec:
+      command: sleep 1
+  hello:
+    greq:
+      jyapp.runndemo.hello.v1.HelloService/Hello: 
+        message:
+          message: from hello runbook!!
+    test: |
+      current.res.status == 0

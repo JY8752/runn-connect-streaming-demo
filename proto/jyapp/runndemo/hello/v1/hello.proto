@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package jyapp.runndemo.hello.v1;
+
+message HelloRequest { string message = 1; }
+
+message HelloResponse {}
+
+service HelloService {
+  rpc Hello(HelloRequest) returns (HelloResponse) {}
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package jyapp.runndemo.greet.v1;
+
+message GreetRequest { string message = 1; }
+
+message GreetResponse {}
+
+service GreetService {
+  rpc Greet(GreetRequest) returns (GreetResponse) {}
+}
