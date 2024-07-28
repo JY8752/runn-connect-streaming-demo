@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+// 特定のメッセージをpublishするためのproto
 package jyapp.runndemo.greet.v1;
 
 message GreetRequest { string message = 1; }

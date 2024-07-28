@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+// サーバーとPubSubでメッセージをやり取りする
 package jyapp.runndemo.pubsub.v1;
 
 message SubscribeRequest {}
