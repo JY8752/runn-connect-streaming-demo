@@ -23,4 +23,5 @@ make books
 ## リンク
 
 [Protobufモジュール](https://buf.build/jyapp/runndemo)
-[zenn記事]()
+
+[zenn記事](https://zenn.dev/jy8752/articles/685f7001e3a351)
